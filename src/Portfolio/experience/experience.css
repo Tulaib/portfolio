@@ -1,0 +1,101 @@
+.experience__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+@keyframes stretch {
+    0% {
+      transform: scale(.9);
+      color: var(--color-primary);
+      /* background-color: red; */
+      border-radius: 100%;
+    }
+    50% {
+        /* color: var(--color-white); */
+    }
+    100% {
+      transform: scale(1.2);
+      color: var(--color-primary);
+    }
+  }
+/* 
+  .from-left{
+      transform: translateX(-50%);
+  }
+  .from-right{
+      transform: translateX(50%);
+  }
+
+  .from-left,.from-right{
+      transition: transform 400ms;
+  } */
+
+.abc{
+    animation-name: stretch;
+    animation-duration: 1.5s; 
+    animation-timing-function: ease-out; 
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-fill-mode: none;
+    animation-play-state: running;
+}
+.experience__container > div {
+    background: var(--color-bg-variant);
+    padding: 2.4rem 5rem;
+    border-radius: 2rem;
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.experience__container > div:hover{
+    background: transparent;
+    background-color: var(--color-primary-variant);
+    cursor: default;
+}
+.experience__container > div h3{
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+}
+.experience__content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2rem;
+}
+.experience__details{
+    display: flex ;
+    gap: 1rem;
+}
+.experience__details-icons{
+    margin-top: 6px;
+    color: var(--color-primary);
+}
+
+@media screen and (max-width : 1024px) {
+    .experience__container{
+        grid-template-columns: 1fr;
+    }
+    .experience__container > div{
+        width: 80%;
+        padding: 2rem;
+        margin: 0 auto;
+    }
+    .experience__content{
+        padding: 1rem;
+    }
+  }
+  @media screen and (max-width : 600px) {
+    .experience__container{
+        gap: 1rem;
+    }
+    .experience__container > div{
+        width: 100%;
+        /* margin: 10px; */
+        padding: 2rem 1rem;
+    }
+    .abc{
+        font-size: 1.1rem;
+    }
+
+  }
